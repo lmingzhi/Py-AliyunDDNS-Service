@@ -1,15 +1,23 @@
 # 基于Python3.X/阿里云云解析API运用于树梅派做家庭服务器的DDNS服务
-## 加入配置管理/日志管理/外网出口IP模块
-## 本项目主要用于学习研究Python在linux下定时任务及将脚本注册成系统服务
-## 本项目将呈现开箱即用的程度，满足广大树梅派爱好者基本所需
-## 本项目依赖的库请自行安装
+
+- 加入配置管理/日志管理/外网出口IP模块
+- 本项目主要用于学习研究Python在linux下定时任务及将脚本注册成系统服务
+- 本项目将呈现开箱即用的程度，满足广大树梅派爱好者基本所需
+- 本项目依赖的库请自行安装
+
+```sh
 sudo pip3 install aliyun-python-sdk-core
 sudo pip3 install aliyun-python-sdk-alidns
 sudo pip3 install bs4
+```
 
-若运行报缺少其他库，请自行sudo pip3 install [包]
+若运行报缺少其他库，请自行 `sudo pip3 install [包]`
+
 ## 配置文件说明
+
 本程序启动后会自行添加一个模板空配置文件，定义如下：
+
+```json
 {
     "interval": "60", //轮询之间间隔，单位秒，建议900，即15分钟
     "last_ip": "",
@@ -23,8 +31,9 @@ sudo pip3 install bs4
     "region_id":"",
     "access_token":""
 }
+```
 
-## app.log为本软件日志记录 在程序运行后会自动添加，建议先对软件运行目录进行写权限赋予
+> app.log为本软件日志记录 在程序运行后会自动添加，建议先对软件运行目录进行写权限赋予
+> 注册成系统服务，请参考https://www.jianshu.com/p/7ea6a98f5eb8
 
-## 注册成系统服务，请参考https://www.jianshu.com/p/7ea6a98f5eb8
 本项目目录中已有“aliyunddns.sh”的配置规范，请自行按需调整内容
